@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-collapse',
@@ -10,6 +10,8 @@ export class Collapse {
 
   isShown = signal(false)
 
+  @Input({required: true}) title?: string
+  @Input({required: true}) text?: string
   toggleIsShown(){
 
     this.isShown.set(!this.isShown())
